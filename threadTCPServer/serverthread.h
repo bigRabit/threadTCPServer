@@ -20,6 +20,7 @@ signals:
 
 private:
 	int socketDescriptor;
+	QString currentTime();
 //signals:
 	//void stringChanged(const QString&);
 };
