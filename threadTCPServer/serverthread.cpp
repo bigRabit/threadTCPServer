@@ -40,7 +40,7 @@ void serverthread::run()
 	QTextStream txtInput(&f);  
 	QString lineStr;  
 	
-	for(int i=0;i<=4;++i)  
+	while(!txtInput.atEnd())
 	{  
 
 	    QByteArray block;
