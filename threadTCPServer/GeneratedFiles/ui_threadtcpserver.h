@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'threadtcpserver.ui'
 **
-** Created: Fri Jul 17 15:19:44 2015
+** Created: Wed Jul 22 20:49:48 2015
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
