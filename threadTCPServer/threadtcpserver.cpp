@@ -5,6 +5,7 @@
 
 #include "threadtcpserver.h"
 #include "tcpserver.h"
+#include "fileserver.h"
 
 threadTCPServer::threadTCPServer(QWidget *parent, Qt::WFlags flags)
 	: QDialog(parent, flags)
@@ -29,7 +30,14 @@ threadTCPServer::threadTCPServer(QWidget *parent, Qt::WFlags flags)
 
 	if(!server.listen(QHostAddress::LocalHost,23333))
 	{
-		QMessageBox::critical(this,tr("Server"),tr("Unable to start the server : %1.").arg(server.errorString()));
+		QMessageBox::critical(this,tr("Tcp Server"),tr("Unable to start the server : %1.").arg(server.errorString()));
+		close();
+		return;
+	}
+
+	if(!fServer.listen(QHostAddress::LocalHost,23334))
+	{
+		QMessageBox::critical(this,tr("File Server"),tr("Unable to start the server : %1.").arg(server.errorString()));
 		close();
 		return;
 	}

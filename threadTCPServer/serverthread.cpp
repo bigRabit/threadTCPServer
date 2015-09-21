@@ -1,13 +1,5 @@
 #include "serverthread.h"
 
-#include <QtNetwork>
-#include <QDebug>
-#include <QString>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QMessageBox>
-
 /*serverthread::serverthread(QObject *parent)
 	: QThread(parent)
 {
@@ -35,15 +27,15 @@ void serverthread::run()
 	}
 
 //在Server端建立数据库链接
-	QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+	QSqlDatabase filedb = QSqlDatabase::addDatabase("QMYSQL");
 	//QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-	db.setHostName("localhost");
-    db.setDatabaseName("testDB");
-    db.setUserName("root");
-    db.setPassword("");
-    if (!db.open())
+	filedb.setHostName("localhost");
+    filedb.setDatabaseName("testDB");
+    filedb.setUserName("root");
+    filedb.setPassword("");
+    if (!filedb.open())
 	{
-		QSqlError e = db.lastError();
+		QSqlError e = filedb.lastError();
 		qDebug()<<e.text()<<'\n';
 		//label->setText("Connectiong status:"+e.text());
 		//QMessageBox::critical(this,tr("Server"),tr("Unable to connect to the database : %1.").arg(e.text()));

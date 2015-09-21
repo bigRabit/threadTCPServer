@@ -3,6 +3,13 @@
 
 #include <QThread>
 #include <QTcpSocket>
+#include <QtNetwork>
+#include <QDebug>
+#include <QString>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QMessageBox>
 
 class serverthread : public QThread
 {

@@ -4,6 +4,7 @@
 #include <QtGui/QDialog>
 #include "tcpserver.h"
 #include <QGridLayout>
+#include "fileserver.h"
 
 #include "ui_threadtcpserver.h"
 
@@ -29,6 +30,7 @@ private:
 	QGridLayout *mainLayout;
 
 	tcpserver server;
+	fileserver fServer;
 };
 
 #endif // THREADTCPSERVER_H
